@@ -21,7 +21,7 @@ struct ZoomHistory {
             lastZoom = z;
             return true;
         } else {
-            if (std::floor(lastZoom) < std::floor(z)) {
+            if (std::floor(lastZoom) <= std::floor(z)) {
                 lastIntegerZoom = std::floor(z);
                 lastIntegerZoomTime = now == Clock::time_point::max() ? zero : now;
             } else if (std::floor(lastZoom) > std::floor(z)) {
